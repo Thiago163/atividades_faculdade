@@ -174,13 +174,7 @@ int main()
     FILE *OlimpiadasParis2024 = fopen("OlimpiadasParis2024.csv", "w");
 
 
-    if (SantosDumont == NULL)
-    {
-        printf("Erro ao abrir o arquivo.\n");
-        return 1;
-    }
-
-    if (OlimpiadasParis2024 == NULL)
+    if (SantosDumont == NULL || OlimpiadasParis2024 == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");
         return 1;
