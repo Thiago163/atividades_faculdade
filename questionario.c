@@ -206,7 +206,8 @@ int main()
 
 // Feche o arquivo CSV
     fclose(SantosDumont);
-    // Feche o arquivo CSV
+
+// Feche o arquivo CSV
     fclose(OlimpiadasParis2024);
     return 0;
 }
