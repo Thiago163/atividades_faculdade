@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 // Função para o questionário sobre Santos Dumont
-void questionarioSantosDumont(FILE *arquivo)
+void questionarioSantosDumont(FILE *SantosDumont)
 {
     char opcao;
     printf("Exposição Santos Dumont\n");
@@ -21,13 +21,13 @@ void questionarioSantosDumont(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "1, A, Acertou\n");
+        fprintf(SantosDumont, "1, A, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "1, %c, Errou\n", opcao);
+        fprintf(SantosDumont, "1, %c, Errou\n", opcao);
     }
     printf("\n");
     printf("2. Em qual estado do Brasil nasceu Santos Dumont?\n");
@@ -44,13 +44,13 @@ void questionarioSantosDumont(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "2, D, Acertou\n");
+        fprintf(SantosDumont, "2, D, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "2, %c, Errou\n", opcao);
+        fprintf(SantosDumont, "2, %c, Errou\n", opcao);
     }
 
     printf("\n");
@@ -68,13 +68,13 @@ void questionarioSantosDumont(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "3, C, Acertou\n");
+        fprintf(SantosDumont, "3, C, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "3, %c, Errou\n", opcao);
+        fprintf(SantosDumont, "3, %c, Errou\n", opcao);
     }
 
     printf("\n");
@@ -92,13 +92,13 @@ void questionarioSantosDumont(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "4, A, Acertou\n");
+        fprintf(SantosDumont, "4, A, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "4, %c, Errou\n", opcao);
+        fprintf(SantosDumont, "4, %c, Errou\n", opcao);
     }
 
     printf("\n");
@@ -116,18 +116,18 @@ void questionarioSantosDumont(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "5, B, Acertou\n");
+        fprintf(SantosDumont, "5, B, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "5, %c, Errou\n", opcao);
+        fprintf(SantosDumont, "5, %c, Errou\n", opcao);
     }
 }
 
 // Função para o novo questionário sobre as Olimpíadas
-void questionarioOlimpiadas(FILE *arquivo)
+void questionarioOlimpiadas(FILE *OlimpiadasParis2024)
 {
     char opcao;
     printf("Jogos Olímpicos\n");
@@ -145,13 +145,13 @@ void questionarioOlimpiadas(FILE *arquivo)
     {
         printf("Acertou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Acertou"
-        fprintf(arquivo, "1, C, Acertou\n");
+        fprintf(OlimpiadasParis2024, "1, C, Acertou\n");
     }
     else
     {
         printf("Errou\n");
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
-        fprintf(arquivo, "1, %c, Errou\n", opcao);
+        fprintf(OlimpiadasParis2024, "1, %c, Errou\n", opcao);
     }
     printf("\n");
 // Adicione as outras perguntas e respostas sobre as Olimpíadas aqui
@@ -166,30 +166,47 @@ int main()
     printf("\n");
     int escolha;
     scanf("%d", &escolha);
+
 // Abra o arquivo CSV para escrever
-    FILE *arquivo = fopen("respostas.csv", "w");
-    if (arquivo == NULL)
+    FILE *SantosDumont = fopen("SantosDumont.csv", "w");
+
+// Abra o arquivo CSV para escrever
+    FILE *OlimpiadasParis2024 = fopen("OlimpiadasParis2024.csv", "w");
+
+
+    if (SantosDumont == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");
         return 1;
     }
+
+    if (OlimpiadasParis2024 == NULL)
+    {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+
     if (escolha == 1)
     {
 // Escreva o título do questionário na primeira célula
-        fprintf(arquivo, "Questionário Santos Dumont\n");
-        questionarioSantosDumont(arquivo);
+        fprintf(SantosDumont, "Questionário Santos Dumont\n");
+        questionarioSantosDumont(SantosDumont);
     }
     else if (escolha == 2)
     {
 // Escreva o título do questionário na primeira célula
-        fprintf(arquivo, "Questionário Olimpíadas Paris 2024\n");
-        questionarioOlimpiadas(arquivo);
+        fprintf(OlimpiadasParis2024, "Questionário Olimpíadas Paris 2024\n");
+        questionarioOlimpiadas(OlimpiadasParis2024);
     }
     else
     {
         printf("Opção inválida.\n");
     }
+
 // Feche o arquivo CSV
-    fclose(arquivo);
+    fclose(SantosDumont);
+    // Feche o arquivo CSV
+    fclose(OlimpiadasParis2024);
     return 0;
 }
