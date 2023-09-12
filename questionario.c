@@ -153,8 +153,102 @@ void questionarioOlimpiadas(FILE *OlimpiadasParis2024)
 // Escreva a resposta no arquivo CSV com a indicação de "Errou"
         fprintf(OlimpiadasParis2024, "1, %c, Errou\n", opcao);
     }
+
     printf("\n");
-// Adicione as outras perguntas e respostas sobre as Olimpíadas aqui
+    printf("2. Quais os anos em que Paris já foi sede dos Jogos Olímpicos?\n");
+    printf("\n");
+    printf("A) Nunca foi sede\n");
+    printf("B) Apenas em 2024\n");
+    printf("C) 1800 e 1920 e agora em 2024\n");
+    printf("D) 1900 e 1924 e agora em 2024\n");
+    printf("\n");
+    printf("Escolha a alternativa correta\n");
+    scanf(" %c", &opcao);
+
+    if (opcao == 'd' || opcao == 'D')
+    {
+        printf("Acertou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Acertou"
+        fprintf(OlimpiadasParis2024, "2, D, Acertou\n");
+    }
+    else
+    {
+        printf("Errou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Errou"
+        fprintf(OlimpiadasParis2024, "2, %c, Errou\n", opcao);
+    }
+
+    printf("\n");
+    printf("3.  Quantas modalidades de esporte serão ao todo na edição inteira?\n");
+    printf("\n");
+    printf("A) O evento terá 58 modalidades e 32 esportes.\n");
+    printf("B) O evento terá 8 modalidades e 2 esportes.\n");
+    printf("C) O evento terá 48 modalidades e 32 esportes.\n");
+    printf("D) O evento terá 48 modalidades e 22 esportes.\n");
+    printf("\n");
+    printf("Escolha a alternativa correta\n");
+    scanf(" %c", &opcao);
+
+    if (opcao == 'c' || opcao == 'C')
+    {
+        printf("Acertou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Acertou"
+        fprintf(OlimpiadasParis2024, "3, C, Acertou\n");
+    }
+    else
+    {
+        printf("Errou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Errou"
+        fprintf(OlimpiadasParis2024, "3, %c, Errou\n", opcao);
+    }
+
+    printf("\n");
+    printf("4. Qual o nome do mascote desta edição?\n");
+    printf("\n");
+    printf("A) Phryges\n");
+    printf("B) Bolinha\n");
+    printf("C) Willie\n");
+    printf("D) Footix\n");
+    printf("\n");
+    printf("Escolha a alternativa correta\n");
+    scanf(" %c", &opcao);
+
+    if (opcao == 'a' || opcao == 'A')
+    {
+        printf("Acertou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Acertou"
+        fprintf(OlimpiadasParis2024, "4, A, Acertou\n");
+    }
+    else
+    {
+        printf("Errou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Errou"
+        fprintf(OlimpiadasParis2024, "4, %c, Errou\n", opcao);
+    }
+
+    printf("\n");
+    printf("5. Em qual dia será a abertura dos jogos?\n");
+    printf("\n");
+    printf("A) 27 de julho.\n");
+    printf("B) 26 de julho.\n");
+    printf("C) 30 de janeiro.\n");
+    printf("D) 31 de abril.\n");
+    printf("\n");
+    printf("Escolha a alternativa correta\n");
+    scanf(" %c", &opcao);
+
+    if (opcao == 'b' || opcao == 'B')
+    {
+        printf("Acertou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Acertou"
+        fprintf(OlimpiadasParis2024, "5, B, Acertou\n");
+    }
+    else
+    {
+        printf("Errou\n");
+// Escreva a resposta no arquivo CSV com a indicação de "Errou"
+        fprintf(OlimpiadasParis2024, "5, %c, Errou\n", opcao);
+    }
 }
 
 int main()
