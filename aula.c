@@ -47,8 +47,11 @@ int exercicio1()
     {
         f++;
         int resultado = aleatorio();
-        printf("\n%d\n", resultado);
+        printf("%d ", resultado);
     }
+
+    printf("\nO dado girou: %d\n", f);
+
     getch();
     return 0;
 }
